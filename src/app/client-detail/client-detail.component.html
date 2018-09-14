@@ -1,0 +1,36 @@
+<div *ngIf="client">
+	<h2>{{client.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{client.id}}</div>
+	<div>
+		<label>Name:
+			<input [(ngModel)]="client.name" placeholder="name">
+		</label>		
+	</div>
+	<div>
+		<label>Phone:
+			<input [(ngModel)]="client.phone" placeholder="phone">
+		</label>		
+	</div>
+	<div>
+		<label>Birthday:
+			<input [(ngModel)]="client.birthday" placeholder="birthday">
+		</label>		
+	</div>
+	<div>
+		<label>Work Detail:
+			<input [(ngModel)]="client.workDetail" placeholder="workDetail">
+		</label>		
+	</div>
+	<div>
+		<label>Tone:
+			<input [(ngModel)]="client.tone" placeholder="tone">
+		</label>		
+	</div>
+	<div>
+		<label>Attention Day:
+			<input [(ngModel)]="client.attentionDay" placeholder="attentionDay">
+		</label>		
+	</div>	
+	<button (click)="goBack()">go back</button>
+	<button (click)="save()">save</button>	
+</div>
