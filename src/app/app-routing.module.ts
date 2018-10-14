@@ -6,6 +6,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { ShiftsComponent } from './shifts/shifts.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { ClientNewComponent } from './client-new/client-new.component';
+import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 
 const routes = [
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes = [
 	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'shifts', component: ShiftsComponent },
 	{ path: 'detail/:id', component: ClientDetailComponent },
-	{ path: 'new', component: ClientNewComponent 
+	{ path: 'new', component: ClientNewComponent },
+	{ path: 'admin', component: AdminLayoutComponent
 }];
 
 @NgModule({

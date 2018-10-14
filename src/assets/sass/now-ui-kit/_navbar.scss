@@ -110,6 +110,9 @@
         height: 27px;
         outline: 0;
         cursor: pointer;
+        transform: none !important;
+        left: auto !important;
+        transition: none !important;
 
         &.navbar-toggler-left{
             position: relative;

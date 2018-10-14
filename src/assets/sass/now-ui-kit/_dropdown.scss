@@ -37,6 +37,8 @@
         &:hover,
         &:focus{
             background-color: $opacity-gray-3;
+            box-shadow: none;
+            color: inherit;
         }
     }
 

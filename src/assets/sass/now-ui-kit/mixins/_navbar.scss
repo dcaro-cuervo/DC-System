@@ -1,7 +1,15 @@
 @mixin navbar-responsive() {
     .navbar{
+        .container {
+            transform: none;
+            padding: 0;
+            transition: none;
+            left: auto;
+        }
         .navbar-nav{
             margin-top: 53px;
+            margin-bottom: 0;
+            z-index: auto;
 
             .nav-link{
                 padding-top: 0.75rem;
@@ -144,9 +152,9 @@
 }
 
 @mixin navbar-collapse() {
+    .navbar-collapse.collapse { display: block !important; }
     .navbar-collapse{
         position: fixed;
-        display: block;
         top: 0;
         height: 100% !important;
         width: 300px;

@@ -8,20 +8,15 @@
               <span class="button-bar"></span>
           </a>
            <div ngbDropdownMenu>
-             <a class="dropdown-header">Dropdown header</a>
-             <a class="dropdown-item" href="#">Action</a>
-             <a class="dropdown-item" href="#">Another action</a>
-             <a class="dropdown-item" href="#">Something else here</a>
+             <a class="dropdown-item" href="#">Clients</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Separated link</a>
+             <a class="dropdown-item" href="#">Shifts</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">One more separated link</a>
            </div>
          </div>
       </div>
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
-                Now Ui Kit
+            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" >
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar bar1"></span>
@@ -29,24 +24,18 @@
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+        <div class="collapse navbar-collapse" data-nav-image="./assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular" target="_blank">
+                  <a class="nav-link" routerLink="/admin">
                       <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                      <p>Download</p>
+                      <p>Clients</p>
                   </a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://creativetimofficial.github.io/now-ui-kit-angular/documentation/tutorial" target="_blank">
+                    <a class="nav-link" routerLink="/shifts">
                       <i class="now-ui-icons files_paper"></i>
-                      <p>Documentation</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro-angular" target="_blank">
-                        <i class="now-ui-icons arrows-1_share-66"></i>
-                        <p>Upgrade to PRO</p>
+                      <p>Shifts</p>
                     </a>
                 </li>
                 <li class="nav-item">
