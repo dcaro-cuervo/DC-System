@@ -3,6 +3,7 @@
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 $sans-serif-family:          'Montserrat', 'Helvetica Neue',  Arial, sans-serif;
+$font-family-sans-serif: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
 
 $none:                       0   !default;
 $border-thin:                1px !default;
@@ -19,6 +20,7 @@ $black-bg:                   rgba(30,30,30,.97) !default;
 
 $black-color:                #2c2c2c !default;
 $black-hr:                   #444444 !default;
+$black-color-material:       #3C4858 !default;
 
 $light-gray:                 #E3E3E3 !default;
 $medium-gray:                #DDDDDD !default;

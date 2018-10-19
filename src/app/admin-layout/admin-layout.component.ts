@@ -74,7 +74,11 @@ export class AdminLayoutComponent implements OnInit {
   runOnRouteChange(): void {
     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-      const ps = new PerfectScrollbar(elemMainPanel);
+      let ps = new PerfectScrollbar(elemMainPanel);
+      ps.update();
+
+      const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
+      ps = new PerfectScrollbar(elemSidebar);
       ps.update();
     }
   }

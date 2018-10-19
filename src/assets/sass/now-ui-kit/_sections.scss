@@ -26,7 +26,22 @@
 
 .dark-edition{
     background-color: #1a2035;
-    color: $black-color;
+    color: $black-color-material;
+    font-family: $font-family-sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+
+    .sidebar .sidebar-background:after,
+    .sidebar {
+        background: #1f283e;
+        opacity: .94;
+        color: $black-color-material;
+    }
+
+    .sidebar .logo .simple-text {
+        color: #a9afbbd1;
+        font-weight: 300;
+    }
 }
 
 .section{
