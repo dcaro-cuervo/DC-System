@@ -1,13 +1,16 @@
 //https://www.google.com/design/spec/components/cards.html#cards-content-blocks
 // Card resting elevation: 2dp
-.card {
+.card-dashboard {
   border: 0;
   margin-bottom: 30px;
   margin-top: 30px;
   border-radius: $border-radius-large;
   color: $gray-dark;
-  background: $white-color;
+  background: #202940;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
     .card-category:not([class*="text-"]) {
         color: $gray-color;
@@ -98,6 +101,7 @@
     .card-header {
       border-bottom: none;
       background: transparent;
+
         .title{
             color: $white-color;
         }
@@ -336,7 +340,7 @@
     }
 }
 
-.card {
+.card-dashboard {
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
 
   .table tr:first-child td{
@@ -351,7 +355,11 @@
   .card-body{
     padding: $padding-card-body-y 20px;
     position: relative;
+    color: #8b92a9;
 
+    .text-primary {
+      color: $purple-color;
+    }
   }
 
   .card-header {
@@ -359,6 +367,9 @@
 
     .card-title{
       margin-bottom: 3px;
+      font-size: 1.125rem;
+      line-height: 1.4em;
+      font-weight: 300;
     }
 
     .card-category{

@@ -10,7 +10,7 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
+    { path: '/table-list', title: 'User List',  icon:'content_paste', class: '' },
     { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
@@ -29,6 +29,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.setInitialArray();
   };
 
   isMobileMenu() {
@@ -37,4 +38,17 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+
+  onSelect(itemSelected: string): void {
+    for (let item of ROUTES) {
+      item.class = (item.title == itemSelected ? 'active' : '');
+    }
+  };
+
+  private setInitialArray() {
+    for (let item of ROUTES) {
+      item.class = '';
+    }
+    ROUTES[2].class = 'active';
+  }
 }
