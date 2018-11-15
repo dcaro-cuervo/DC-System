@@ -2,7 +2,7 @@ import { Component, OnInit }  from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Observable, Subject} from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 
 import { Client }             from '../client';
 import { ClientService }      from '../client.service';
@@ -14,7 +14,6 @@ import { ClientService }      from '../client.service';
 })
 export class ClientListComponent implements OnInit {
 
-  clients : Client[];
   clients$: Observable<Client[]>;
   private searchTerms : string;
 
@@ -39,7 +38,7 @@ export class ClientListComponent implements OnInit {
   }
 
   delete(clientToDelete: Client): void {
-  	this.clients = this.clients.filter(client => client !== clientToDelete);
+  	this.clients$ = this.clients$.pipe(map(clients => clients.filter(client => client !== clientToDelete)));
   	this.clientService.deleteclient(clientToDelete).subscribe();
   }
 }
