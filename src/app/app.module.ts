@@ -9,46 +9,39 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }            from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { ClientsComponent } from './clients/clients.component';
-import { ShiftsComponent } from './shifts/shifts.component';
-import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { ClientSearchComponent } from './client-search/client-search.component';
-import { ClientNewComponent } from './client-new/client-new.component';
+import { ClientsModule } from './clients/clients.module';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShiftsComponent } from './shifts/shifts.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ClientsComponent,
-    ShiftsComponent,
-    ClientDetailComponent,
-    ClientSearchComponent,
-    ClientNewComponent,
     NavbarComponent,
-    SidebarComponent,
-    AdminLayoutComponent
+    ShiftsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
+    ClientsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule,
     
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],  
+    ),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

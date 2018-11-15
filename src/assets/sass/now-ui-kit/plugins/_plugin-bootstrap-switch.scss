@@ -178,8 +178,8 @@
   filter: alpha(opacity=0);
   z-index: -1;
 }
-.bootstrap-switch input[type='radio'].form-control,
-.bootstrap-switch input[type='checkbox'].form-control {
+.bootstrap-switch input[type='radio'].dashboard-form-control,
+.bootstrap-switch input[type='checkbox'].dashboard-form-control {
   height: auto;
 }
 .bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-handle-on,

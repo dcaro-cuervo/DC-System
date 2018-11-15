@@ -73,14 +73,14 @@
   .form-control {
     // underline animation color on focus
     $underline-background-image: linear-gradient(
-        to top,
+        0deg,
         $label-color-focus 2px,
-        fade-out($label-color-focus, 1) 2px
+        fade-out($label-color-focus, 1) 0
       ),
       linear-gradient(
-        to top,
+        0deg,
         $line-color 1px,
-        fade-out($line-color, 1) 1px
+        fade-out($line-color, 1) 0
       );
     $underline-background-image-invalid: linear-gradient(
         to top,

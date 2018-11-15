@@ -31,6 +31,11 @@
     font-weight: 300;
     font-size: 16px;
 
+    .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
+        color: #606477;
+        transition: all .15s linear,color,box-shadow 0ms;
+    };
+
     .sidebar .sidebar-background:after,
     .sidebar {
         background: #1f283e;
@@ -244,7 +249,7 @@
     .text-center {
         padding: 0 15px !important;
     }
-    .form-control {
+    .dashboard-form-control {
             background-attachment: initial;
             background-clip: padding-box;
             background-image: none;

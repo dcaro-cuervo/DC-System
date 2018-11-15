@@ -296,11 +296,12 @@
 
 
     &[data-background-color="black"]{
-        @include sidebar-background-color($gray-base, $white-color);
+        @include sidebar-background-color($gray-base, $gray-light-color);
 
         .nav li .dropdown-menu .dropdown-item{
           color: $white-color;
         }
+        @include sidebar-active-color($white-color);
     }
 
     &[data-color="purple"]{
@@ -384,7 +385,7 @@
         border-top: 1px solid #e7e7e7;
     }
 
-     .navbar{
+     .client-navbar{
         margin-bottom: 0;
     }
 

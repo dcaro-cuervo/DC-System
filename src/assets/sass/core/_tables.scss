@@ -36,6 +36,16 @@
        vertical-align: middle;
        border-color: rgba(180, 180, 180, 0.1);
        color: #8b92a9;
+
+       a {
+        color: $purple-500 !important;
+        cursor: pointer;
+       }
+
+       a:not([href]):not([tabindex]):hover,
+       a:not([href]):not([tabindex]):focus {
+        color: #89229b !important;
+       }
    }
 
    thead{

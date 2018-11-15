@@ -165,6 +165,10 @@
             border: 1px solid $default-color;
         }
     }
+
+    &.navbar-hide {
+        display: none;
+    }
 }
 
 .bg-default{

@@ -68,7 +68,7 @@
   opacity: 1;
 }
 
-.form-control input[type="checkbox"]:disabled + .form-check-sign::before,
+.dashboard-form-control input[type="checkbox"]:disabled + .form-check-sign::before,
 .checkbox input[type="checkbox"]:disabled + .form-check-sign::after{
     cursor: not-allowed;
 }

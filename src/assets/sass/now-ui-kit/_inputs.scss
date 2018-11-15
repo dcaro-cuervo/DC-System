@@ -1,6 +1,6 @@
 @include form-control-placeholder($medium-gray, 1);
 
-.form-control {
+.dashboard-form-control {
     background-color: $transparent-bg;
     border: 1px solid $light-gray;
     border-radius: $btn-round-radius;
@@ -42,8 +42,8 @@
 
     .has-danger &,
     .has-success &{
-        &.form-control-success,
-        &.form-control-danger{
+        &.dashboard-form-control-success,
+        &.dashboard-form-control-danger{
             background-image: none;
         }
     }
@@ -58,7 +58,7 @@
         }
     }
 
-    & + .form-control-feedback{
+    & + .dashboard-form-control-feedback{
         border-radius: $border-radius-large;
         font-size: $font-size-base;
         margin-top: 0;
@@ -111,8 +111,8 @@
 
 .form-group.form-group-no-border,
 .input-group.form-group-no-border{
-    .form-control,
-    .form-control + .input-group-text{
+    .dashboard-form-control,
+    .dashboard-form-control + .input-group-text{
         background-color: $opacity-gray-3;
         border: medium none;
         &:focus,
@@ -123,7 +123,7 @@
         }
     }
 
-    .form-control{
+    .dashboard-form-control{
         &:focus{
             & + .input-group-text{
                 background-color: $opacity-gray-5;
@@ -139,12 +139,12 @@
 }
 
 .has-error{
-    .form-control-feedback, .control-label{
+    .dashboard-form-control-feedback, .control-label{
         color: $danger-color;
     }
 }
 .has-success{
-    .form-control-feedback, .control-label{
+    .dashboard-form-control-feedback, .control-label{
         color: $success-color;
     }
 }
@@ -162,15 +162,15 @@
     .has-danger &{
         background-color: $white-color;
     }
-    .has-danger .form-control:focus + &{
+    .has-danger .dashboard-form-control:focus + &{
         color: $danger-color;
     }
-    .has-success .form-control:focus + &{
+    .has-success .dashboard-form-control:focus + &{
         color: $success-color;
     }
 
-    & + .form-control,
-    & ~ .form-control{
+    & + .dashboard-form-control,
+    & ~ .dashboard-form-control{
         @include input-size($padding-base-vertical - 1, $padding-base-horizontal);
         padding-left: 18px;
     }
@@ -197,6 +197,20 @@
 .form-group{
     margin-bottom: 10px;
 }
+
+.input-group {
+    .dashboard-form-control {
+        position: relative;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-bottom: 0;
+    }
+    .dashboard-form-control:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
 .input-group[disabled]{
     .input-group-text{
         background-color: $light-gray;
@@ -232,19 +246,19 @@
   }
 }
 
-.input-group .form-control:first-child,
+.input-group .dashboard-form-control:first-child,
 .input-group-text:first-child,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
     border-right: 0 none;
 }
-.input-group .form-control:last-child,
+.input-group .dashboard-form-control:last-child,
 .input-group-text:last-child,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child) {
     border-left: 0 none;
 }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+.dashboard-form-control[disabled], .dashboard-form-control[readonly], fieldset[disabled] .dashboard-form-control {
     background-color: $light-gray;
     color: $default-color;
     cursor: not-allowed;
@@ -261,7 +275,7 @@
 .input-group-btn:last-child > .btn{
     margin-left: 0;
 }
-textarea.form-control{
+textarea.dashboard-form-control{
     max-width: 100%;
     padding: 10px 10px 0 0;
     resize: none;
@@ -281,8 +295,8 @@ textarea.form-control{
 .has-success,
 .has-danger{
 
-    &.form-group .form-control,
-    &.form-group.form-group-no-border .form-control{
+    &.form-group .dashboard-form-control,
+    &.form-group.form-group-no-border .dashboard-form-control{
         padding-right: $padding-input-horizontal + 21;
     }
 }

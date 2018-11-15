@@ -4,7 +4,7 @@
             .nav-link{
               color: $font-color;
             }
-            i{
+            i, p{
               color: rgba($font-color, .8);
             }
 
@@ -39,10 +39,11 @@
             &.active > a:not([data-toggle="collapse"]){
                 color: $font-color;
                 opacity: 1;
-                @include shadow-big-color($font-color);
+                @include linear-gradient($purple-700, $purple-color);
+                @include shadow-big-color($brand-primary);
 
-                i{
-                    color: rgba($font-color, .8);
+                i,p{
+                    color: $font-color;
                 }
             }
         }

@@ -6,7 +6,7 @@ form {
       margin: 0;
   }
   // reverse the above for navbars (no help expected in a navbar form)
-  .navbar & {
+  .client-navbar & {
     margin-bottom: 0; // only adjust bottom so that pull-xs-right flexed margin-left: auto works
 
     .bmd-form-group {
@@ -29,6 +29,8 @@ form {
   background: $bmd-form-control-bg-repeat-y $bmd-form-control-bg-position;
   background-size: $bmd-form-control-bg-size;
   border: 0;
+  color: $white-color !important;
+  font-family: $font-family-sans-serif;
   height: 36px;
   transition: background 0s ease-out;
   padding-left: 0;
@@ -40,7 +42,7 @@ form {
   &:focus,
   .bmd-form-group.mat-focused & {
     background-size: $bmd-form-control-bg-size-active;
-    //border-bottom: $input-btn-border-width solid $input-border-color;
+    box-shadow: none;
     transition-duration: 0.3s;
   }
 
@@ -369,11 +371,21 @@ fieldset[disabled] .form-group .form-control{
 }
 
 
-
+.label-client-detail {
+  width: auto !important;
+}
 
 
 .mat-form-field{
   display: block !important;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 10px;
+  }
+  .mat-form-field-label {
+    color: $gray-light-color;
+    line-height: 19.6px;
+  }
 }
 
 .has-success{

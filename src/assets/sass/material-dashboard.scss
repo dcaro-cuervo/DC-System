@@ -14,7 +14,7 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
- @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ @import "~@angular/material/prebuilt-themes/purple-green.css";
 
  @import "core/variables";
  @import "core/mixins";
@@ -28,7 +28,7 @@
  @import "core/forms";
  @import "core/input-group";
  @import "core/images";
- //@import "core/navbar";
+ @import "core/client-navbar";
  @import "core/alerts";
  @import "core/type";
  @import "core/tabs";

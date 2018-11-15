@@ -1,0 +1,92 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card-dashboard">
+                  <div class="card-header card-header-primary">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body" *ngIf="client">
+                      <form>
+                          <div class="row">
+                              <div class="col-md-5">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Id (disabled)" disabled>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Name" name="client.name" [(ngModel)]="client.name" type="text">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Phone" type="tel" name="client.phone" [(ngModel)]="client.phone">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Birthday" type="text" name="client.birthday" [(ngModel)]="client.birthday">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="work Detail" type="text" name="client.workDetail" [(ngModel)]="client.workDetail">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Tone" type="text" name="client.tone" [(ngModel)]="client.tone">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Attention Day" type="text" name="client.attentionDay" [(ngModel)]="client.attentionDay">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <label class="label-client-detail">About Me</label>
+                                <mat-form-field class="example-full-width">
+                                   <textarea matInput placeholder="Description"></textarea>
+                                 </mat-form-field>
+                                  <!-- <div class="form-group">
+
+                                      <div class="form-group">
+                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                          <textarea class="form-control" rows="5"></textarea>
+                                      </div>
+                                  </div> -->
+                              </div>
+                          </div>
+                          <button mat-raised-button (click)="save()" class="btn btn-primary pull-right">Update Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card-dashboard card-profile">
+                  <div class="card-avatar">
+                      <a href="#pablo">
+                          <img class="img" src="./././assets/img/faces/marc.jpg" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category">CEO / Co-Founder</h6>
+                      <h4 class="card-title">Alec Thompson</h4>
+                      <p class="card-description">
+                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
