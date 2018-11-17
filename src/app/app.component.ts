@@ -16,7 +16,7 @@ import { slideInAnimation } from './animations';
   animations: [ slideInAnimation ]
 })
 export class AppComponent {
-  title = 'Peluqueria & Barberia GF';
+  title = 'DC System';
   
   private _router: Subscription;
   @ViewChild(NavbarComponent) navbar: NavbarComponent;
