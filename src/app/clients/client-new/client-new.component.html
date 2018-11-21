@@ -4,52 +4,64 @@
           <div class="col-md-8">
               <div class="card-dashboard">
                   <div class="card-header card-header-primary">
-                      <h4 class="card-title">Create Profile</h4>
-                      <p class="card-category">Complete your profile</p>
+                      <h4 class="card-title">Crear Derivación</h4>
+                      <p class="card-category">Complete su derivación</p>
                   </div>
                   <div class="card-body">
                       <form>
                           <div class="row">
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Name" #clientName type="text">
+                                    <input matInput placeholder="N° HC" #hc type="text">
                                   </mat-form-field>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Phone" type="tel" #phone>
+                                    <input matInput placeholder="DNI" #dni type="text">
                                   </mat-form-field>
                               </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Birthday" type="text" #birthday>
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="work Detail" type="text" #workDetail>
-                                </mat-form-field>
-                              </div>
-                          </div>
+                            </div>
                           <div class="row">
                               <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Tone" type="text" #tone>
-                                </mat-form-field>
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nombre Paciente" #clientFirstName type="text">
+                                  </mat-form-field>
                               </div>
                               <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Apellido Paciente" #clientLastName type="text">
+                                  </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Dirección" #adress type="text">
+                                  </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Attention Day" type="text" #attentionDay>
+                                  <input matInput placeholder="Edad" type="text" #age>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Sexo" type="text" #sex>
+                                </mat-form-field>
+                              </div>                            
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Hospital Procedencia" type="text" #hospitalOrigin>
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-12">
-                                <label class="label-client-detail">About Me</label>
+                                <label class="label-client-detail">Información Adicional</label>
                                 <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Description"></textarea>
+                                   <textarea matInput placeholder="Descripción" #additionalInformation></textarea>
                                  </mat-form-field>
                                   <!-- <div class="form-group">
 
@@ -60,7 +72,7 @@
                                   </div> -->
                               </div>
                           </div>
-                          <button mat-raised-button (click)="add(clientName.value, phone.value, 				birthday.value, workDetail.value, tone.value, attentionDay.value); 					clientName.value=''; phone.value=''; birthday.value=''; workDetail.value=''; 		tone.value=''; attentionDay.value=''" class="btn btn-primary pull-right">save
+                          <button mat-raised-button (click)="add(clientFirstName.value, clientLastName.value, hc.value, dni.value, adress.value, age.value, sex.value, hospitalOrigin.value);clientFirstName.value=''; clientLastName.value=''; hc.value=''; dni.value=''; adress.value=''; age.value=''; sex.value=''; hospitalOrigin.value=''" class="btn btn-primary pull-right">Guardar
                           </button>
                           <div class="clearfix"></div>
                       </form>
@@ -70,16 +82,14 @@
           <div class="col-md-4">
               <div class="card-dashboard card-profile">
                   <div class="card-avatar">
-                      <a href="#pablo">
+                      <a href="#diego">
                           <img class="img" src="./././assets/img/faces/marc.jpg" />
                       </a>
                   </div>
                   <div class="card-body">
-                      <h6 class="card-category">CEO / Co-Founder</h6>
-                      <h4 class="card-title">{{clientName.value}}</h4>
-                      <p class="card-description">
-                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                      </p>
+                      <h6 class="card-category">{{hc.value}}</h6>
+                      <h4 class="card-title">{{clientFirstName.value + ' ' + clientLastName.value}}</h4>
+                      <p class="card-description"> {{additionalInformation.value}} </p>
                   </div>
               </div>
           </div>
