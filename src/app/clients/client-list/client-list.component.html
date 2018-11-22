@@ -4,30 +4,30 @@
           <div class="col-md-12">
               <div class="card-dashboard card-plain">
                   <div class="card-header card-header-primary">
-                      <h4 class="card-title ">Clients</h4>
-                      <p class="card-category"> List of clients</p>
+                      <h4 class="card-title ">Derivaciones</h4>
+                      <p class="card-category"> Lista derivaciones</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
                           <table class="table table-hover">
                               <thead class=" text-primary">
                                 <tr>
-                                  <th> ID </th>
-                                  <th> Name </th>
-                                  <th> Phone </th>
-                                  <th> Tone </th>
-                                  <th> Attention Day </th>
+                                  <th> HC </th>
+                                  <th> Paciente </th>
+                                  <th> DNI </th>
+                                  <th> Edad </th>
+                                  <th> Estado </th>
                                   <th></th>
                                 </tr>
                               </thead>
                               <tbody>
                 								<tr *ngFor="let client of clients$ | async">
-                									<td routerLink="/client-center/{{client.id}}">{{client.id}}</td>
-                									<td routerLink="/client-center/{{client.id}}">{{client.name}}</td>
-                									<td routerLink="/client-center/{{client.id}}">{{client.phone}}</td>
-                									<td routerLink="/client-center/{{client.id}}" class="text-primary">{{client.tone}}
+                									<td routerLink="/client-center/{{client.id}}">{{client.hc}}</td>
+                									<td routerLink="/client-center/{{client.id}}">{{client.fullName}}</td>
+                									<td routerLink="/client-center/{{client.id}}">{{client.dni}}</td>
+                                  <td routerLink="/client-center/{{client.id}}">{{client.age}}</td>
+                									<td routerLink="/client-center/{{client.id}}" class="text-primary">{{client.status}}
                                   </td>
-                									<td routerLink="/client-center/{{client.id}}">{{client.attentionDay}}</td>
                                   <td>
                                     <a class="material-icons" title="delete client" (click)="delete(client)">clear</a>
                                   </td>

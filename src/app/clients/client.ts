@@ -1,9 +1,14 @@
 export class Client {
-	id: number;
-	name: string;
+	id: number;	
+	firstName: string;
+	lastName: string;
+	hc: number;
+	dni: number;
+	adress: string;
+	age: number;
+	sex: string;
 	phone: number;
-	birthday: string;
-	workDetail: string;
-	tone: string;
-	attentionDay: string;
-}
+	status: string;
+	hospitalOrigin: string;
+	fullName: string;
+	}

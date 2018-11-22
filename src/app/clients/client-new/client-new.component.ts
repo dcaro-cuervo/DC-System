@@ -30,14 +30,18 @@ export class ClientNewComponent implements OnInit {
 
   goDashboard(): void {
   	this.router.navigate(['/client-center']);
-  }  
+  }
 
-  add(name: string, phone: number, birthday: string, 
-  		workDetail: string, tone: string, attentionDay: string): void {
-    name = name.trim();
+  add(firstName: string, lastName: string, hc: number, dni: number, adress: string, age: number, sex: string,
+    phone: number, hospitalOrigin: string): void {
+    firstName = firstName.trim();
+    lastName = lastName.trim();
+    status = 'Iniciado';
+    const fullName = firstName + ' ' + lastName;
     
-    if (!name) {return; }
-    this.clientService.addclient({ name, phone, birthday, workDetail, tone, attentionDay } as Client)
+    if (!firstName || !lastName) {return; }
+    this.clientService.addclient({ firstName, lastName, hc, dni, adress, age, sex, phone, status,
+    hospitalOrigin, fullName } as Client)
     	.subscribe(client => { this.clients.push(client); });
 
     this.goDashboard();
