@@ -448,5 +448,7 @@ form .ng-valid{
     background-color: $brand-primary;
 }
 .mat-input-element {
-  margin-top: 0.9375em !important;
+  margin-top: 0 !important;
+  color: $white-color !important;
+  padding: 7px 0 !important;
 }
