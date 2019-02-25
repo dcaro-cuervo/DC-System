@@ -14,7 +14,7 @@ const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/js
 export class ClientService {
 
   //URL to web api
-  private clientsUrl = 'api/clients';
+  private clientsUrl = 'http://localhost:3000/api/patients';
 
   constructor(
   	private http: HttpClient,
@@ -64,7 +64,7 @@ export class ClientService {
   		return of([]);
   	}
 
-  	return this.http.get<Client[]>(`${this.clientsUrl}/?name=${term}`).pipe(
+  	return this.http.get<Client[]>(`${this.clientsUrl}/?firstName=${term}`).pipe(
   		tap(_ => this.log('found clientes matching "${term}"')),
   		catchError(this.handleError<Client[]>('searchclients', []))
 	);
@@ -75,14 +75,14 @@ export class ClientService {
   //* POST: add a new client to the server *//
   addclient(newclient: Client): Observable<Client> {
   	return this.http.post<Client>(this.clientsUrl, newclient, httpOptions).pipe(
-  		tap((client: Client) => this.log(`added client w/ id=${client.id}`)),
+  		tap((client: Client) => this.log(`added client w/ id=${client._id}`)),
   		catchError(this.handleError<Client>('addclient'))
 	);
   }
 
   //* DELETE: delete a client from the server */
   deleteclient(clientToRemove: Client | number): Observable<Client> {
-  	const id = typeof clientToRemove === 'number' ? clientToRemove : clientToRemove.id;
+  	const id = typeof clientToRemove === 'number' ? clientToRemove : clientToRemove._id;
   	const url = `${this.clientsUrl}/${id}`;
 
   	return this.http.delete<Client>(url, httpOptions).pipe(
@@ -94,7 +94,7 @@ export class ClientService {
   /** PUT: update the client on the server */
   updateClient(clientToUpdate: Client): Observable<any> { 	
   	return this.http.put(this.clientsUrl, clientToUpdate, httpOptions).pipe(
-  		tap(_ => this.log(`update client id=${clientToUpdate.id}`)),
+  		tap(_ => this.log(`update client id=${clientToUpdate._id}`)),
   		catchError(this.handleError<any>('updateclient'))
 	);
   }

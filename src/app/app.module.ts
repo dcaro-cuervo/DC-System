@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule }               from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }            from './in-memory-data.service';
+//import { InMemoryDataService }            from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShiftsComponent } from './shifts/shifts.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ShiftsComponent } from './shifts/shifts.component';
     DashboardComponent,
     NavbarComponent,
     ShiftsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,14 +35,7 @@ import { ShiftsComponent } from './shifts/shifts.component';
     ClientsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })

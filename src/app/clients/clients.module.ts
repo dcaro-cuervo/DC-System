@@ -15,21 +15,32 @@ import { ClientsRoutingModule } from './clients-routing.module';
 
 import {
 	MatButtonModule,
-  	MatInputModule,
-  	MatFormFieldModule,
-  	MatRippleModule,
-  	MatTooltipModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatRippleModule,
+  MatTooltipModule,
+  MatExpansionModule,
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
+
 import { ClientNavbarComponent } from './client-navbar/client-navbar.component';
+import { DialogStudyComponent } from './dialog-study/dialog-study.component';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatRippleModule,
     MatInputModule,
     MatFormFieldModule,
     MatTooltipModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ClientsRoutingModule
   ],
   declarations: [
@@ -40,7 +51,9 @@ import { ClientNavbarComponent } from './client-navbar/client-navbar.component';
     ClientNewComponent,
     ClientSearchComponent,
   	SidebarComponent,
-  	ClientNavbarComponent
-  ]
+  	ClientNavbarComponent,
+  	DialogStudyComponent
+  ],
+  entryComponents: [DialogStudyComponent]
 })
 export class ClientsModule { }

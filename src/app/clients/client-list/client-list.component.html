@@ -22,11 +22,11 @@
                               </thead>
                               <tbody>
                 								<tr *ngFor="let client of clients$ | async">
-                									<td routerLink="/client-center/{{client.id}}">{{client.hc}}</td>
-                									<td routerLink="/client-center/{{client.id}}">{{client.fullName}}</td>
-                									<td routerLink="/client-center/{{client.id}}">{{client.dni}}</td>
-                                  <td routerLink="/client-center/{{client.id}}">{{client.age}}</td>
-                									<td routerLink="/client-center/{{client.id}}" class="text-primary">{{client.status}}
+                									<td routerLink="/client-center/{{client._id}}">{{client.hc}}</td>
+                									<td routerLink="/client-center/{{client._id}}">{{client.fullName}}</td>
+                									<td routerLink="/client-center/{{client._id}}">{{client.dni}}</td>
+                                  <td routerLink="/client-center/{{client._id}}">{{client.age}}</td>
+                									<td routerLink="/client-center/{{client._id}}" class="text-primary">{{client.status}}
                                   </td>
                                   <td>
                                     <a class="material-icons" title="delete client" (click)="delete(client)">clear</a>

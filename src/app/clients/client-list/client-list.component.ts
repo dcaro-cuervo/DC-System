@@ -27,12 +27,12 @@ export class ClientListComponent implements OnInit {
       switchMap(params => {
         // get the value to search
         this.searchTerms = params.get('sTerms');
-            if (this.searchTerms === null || this.searchTerms.trim() === '') {
-              return this.clientService.getclients();
-            }
-            else {
-              return this.clientService.searchClients(this.searchTerms);
-            }
+        if (this.searchTerms === null || this.searchTerms.trim() === '') {
+          return this.clientService.getclients();
+        }
+        else {
+          return this.clientService.searchClients(this.searchTerms);
+        }
       })
     )
   }

@@ -21,7 +21,9 @@ export class AppComponent {
   private _router: Subscription;
   @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
-  constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+  constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) 
+    private document: any, private element : ElementRef, public location: Location) {}
+  
   ngOnInit() {
       var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
       this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {

@@ -45,6 +45,20 @@ export class InMemoryDataService implements InMemoryDbService {
 			fullName: 'Juan Tornado'}
 		];
 
-		return { clients };
+		const studies = [
+			{ id: 1, date: '2018-02-22', name: 'Ecodoppler color arterial de ambos miembros inferiores', medic: 'Diaz', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''},
+			{ id: 2, date: '2018-02-20', name: 'Ecografia mamaria bilateral', medic: 'lala', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''},
+			{ id: 3, date: '2017-11-27', name: 'Papanicolau hormonal y oncologico', medic: 'Diaz', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''},
+			{ id: 4, date: '2017-11-09', name: 'Estudios clínicos de laboratorio', medic: 'Diaz', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''},
+			{ id: 5, date: '2017-02-07', name: 'Radiografia de torax frente y perfil ', medic: 'Diaz', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''},
+			{ id: 6, date: '2016-12-07', name: 'Estudios clínicos de laboratorio', medic: 'Diaz', lender: 'Idech', audit: 'No',
+			evolutionAudit: '', state: ''}];
+
+		return { clients, studies };
 	}
 }

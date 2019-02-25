@@ -1,14 +1,16 @@
 export class Client {
-	id: number;	
+	_id?: number;
 	firstName: string;
 	lastName: string;
-	hc: number;
 	dni: number;
-	adress: string;
+	hc: number;
+	address: string;
 	age: number;
 	sex: string;
 	phone: number;
-	status: string;
 	hospitalOrigin: string;
-	fullName: string;
+
+	get fullName() {
+		return this.firstName + ' ' + this.lastName;
 	}
+}
