@@ -1,5 +1,5 @@
 export class Client {
-	_id?: number;
+	_id?: string;
 	firstName: string;
 	lastName: string;
 	dni: number;
@@ -9,8 +9,4 @@ export class Client {
 	sex: string;
 	phone: number;
 	hospitalOrigin: string;
-
-	get fullName() {
-		return this.firstName + ' ' + this.lastName;
-	}
 }

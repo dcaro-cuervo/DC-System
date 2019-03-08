@@ -22,7 +22,7 @@ export class ClientService {
 
   /** GET clients from the server */
   getclients(): Observable<Client[]> {
-  	this.messageService.add('clientService: fetched clients');
+  	this.log('fetched clients');
   	return this.http.get<Client[]>(this.clientsUrl)
   		.pipe(
   			tap(clients => this.log('fetched clients')),
@@ -31,7 +31,7 @@ export class ClientService {
   }
 
   /** GET client by id. Return `undefined` when id not found */
-  getclient404<Data>(id: number): Observable<Client> {
+  getclient404<Data>(id: string): Observable<Client> {
   	const url = `${this.clientsUrl}/?id=${id}`;
 
   	return this.http.get<Client[]>(url).pipe(
@@ -46,10 +46,10 @@ export class ClientService {
   }
 
   /** GET client by id. Will 404 if id not found */
-  getclient(id: number): Observable<Client> {
+  getclient(id: string): Observable<Client> {
   	const url = `${this.clientsUrl}/${id}`;
   	
-  	this.messageService.add(`clientService: fetched client id=${id}`);
+  	this.log(`before call client id=${id}`);
   	
   	return this.http.get<Client>(url).pipe(
   		tap(_ => this.log(`fetched client id=${id}`)),
@@ -64,10 +64,12 @@ export class ClientService {
   		return of([]);
   	}
 
-  	return this.http.get<Client[]>(`${this.clientsUrl}/?firstName=${term}`).pipe(
-  		tap(_ => this.log('found clientes matching "${term}"')),
-  		catchError(this.handleError<Client[]>('searchclients', []))
-	);
+    const url = `${this.clientsUrl}/search/${term}`;
+  	return this.http.get<Client[]>(url)
+    .pipe(
+  		tap(_ => this.log(`found clientes matching "${term}"`)),
+  		catchError(this.handleError<Client[]>('searchClients', []))
+    );
   }
 
   //////// Save methods //////////
@@ -81,8 +83,8 @@ export class ClientService {
   }
 
   //* DELETE: delete a client from the server */
-  deleteclient(clientToRemove: Client | number): Observable<Client> {
-  	const id = typeof clientToRemove === 'number' ? clientToRemove : clientToRemove._id;
+  deleteclient(clientToRemove: Client | string): Observable<Client> {
+  	const id = typeof clientToRemove === 'string' ? clientToRemove : clientToRemove._id;
   	const url = `${this.clientsUrl}/${id}`;
 
   	return this.http.delete<Client>(url, httpOptions).pipe(
@@ -92,8 +94,10 @@ export class ClientService {
   }
 
   /** PUT: update the client on the server */
-  updateClient(clientToUpdate: Client): Observable<any> { 	
-  	return this.http.put(this.clientsUrl, clientToUpdate, httpOptions).pipe(
+  updateClient(clientToUpdate: Client): Observable<any> {
+    const url = `${this.clientsUrl}/${clientToUpdate._id}`;
+
+  	return this.http.put(url, clientToUpdate, httpOptions).pipe(
   		tap(_ => this.log(`update client id=${clientToUpdate._id}`)),
   		catchError(this.handleError<any>('updateclient'))
 	);

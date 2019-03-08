@@ -12,7 +12,7 @@
                           <div class="row">
                               <div class="col-md-5">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Id (disabled)" disabled>
+                                    <input matInput placeholder="Id (disabled)" disabled name="client._id" [(ngModel)]="client._id">
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
@@ -41,7 +41,7 @@
                           <div class="row">
                               <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Dirección" type="text" name="client.adress" [(ngModel)]="client.adress">
+                                  <input matInput placeholder="Dirección" type="text" name="client.address" [(ngModel)]="client.address">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -88,9 +88,9 @@
                           <img class="img" src="./././assets/img/faces/marc.jpg" />
                       </a>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" *ngIf="client">
                       <h6 class="card-category">{{ client.hc }}</h6>
-                      <h4 class="card-title">{{ client.fullName }}</h4>
+                      <h4 class="card-title">{{ client.firstName }} {{ client.lastName }}</h4>
                       <p class="card-description">
                           Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                       </p>

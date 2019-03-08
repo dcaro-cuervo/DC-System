@@ -38,7 +38,8 @@ export class ClientListComponent implements OnInit {
   }
 
   delete(clientToDelete: Client): void {
-  	this.clients$ = this.clients$.pipe(map(clients => clients.filter(client => client !== clientToDelete)));
+  	
   	this.clientService.deleteclient(clientToDelete).subscribe();
+    this.clients$ = this.clientService.getclients();
   }
 }

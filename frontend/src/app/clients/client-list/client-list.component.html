@@ -16,18 +16,18 @@
                                   <th> Paciente </th>
                                   <th> DNI </th>
                                   <th> Edad </th>
-                                  <th> Estado </th>
+                                  <!-- <th> Estado </th> -->
                                   <th></th>
                                 </tr>
                               </thead>
                               <tbody>
                 								<tr *ngFor="let client of clients$ | async">
-                									<td routerLink="/client-center/{{client._id}}">{{client.hc}}</td>
-                									<td routerLink="/client-center/{{client._id}}">{{client.fullName}}</td>
-                									<td routerLink="/client-center/{{client._id}}">{{client.dni}}</td>
-                                  <td routerLink="/client-center/{{client._id}}">{{client.age}}</td>
-                									<td routerLink="/client-center/{{client._id}}" class="text-primary">{{client.status}}
-                                  </td>
+                									<td routerLink="/client-center/{{client._id}}">{{ client.hc }}</td>
+                									<td routerLink="/client-center/{{client._id}}">{{ client.firstName }} {{ client.lastName }}</td>
+                									<td routerLink="/client-center/{{client._id}}">{{ client.dni }}</td>
+                                  <td routerLink="/client-center/{{client._id}}">{{ client.age }}</td>
+                									<!-- <td routerLink="/client-center/{{client._id}}" class="text-primary">{{client.status}}
+                                  </td> -->
                                   <td>
                                     <a class="material-icons" title="delete client" (click)="delete(client)">clear</a>
                                   </td>

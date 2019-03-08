@@ -29,6 +29,31 @@ router.get('/patients', (req, res, next) => {
 	});
 });
 
+//retriewing one data from database
+router.get('/patients/:id', (req, res, next) => {
+	Patient.findOne({_id: req.params.id}, function(err, patient) {
+		if (err){
+			res.json(err);
+		}
+		else{
+			res.json(patient);
+		}
+	})
+});
+
+//search data by params from database
+router.get('/patients/search/:searchField', (req, res, next) => {
+	var searchField = new RegExp(req.params.searchField, 'i');
+	Patient.find({ firstName: searchField}, function(err, patients) {
+		if (err){
+			res.json(err);
+		}
+		else{
+			res.json(patients);
+		}
+	})
+});
+
 //inserting new data
 router.post('/patients', (req, res, next) => {
 	let newPatient = new Patient({

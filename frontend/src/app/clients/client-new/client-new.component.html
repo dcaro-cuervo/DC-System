@@ -117,7 +117,7 @@
                     <mat-expansion-panel *ngFor="let study of studies">
                       <mat-expansion-panel-header>
                         <mat-panel-title>
-                          {{study.date}}
+                          {{study.date | date: 'yyyy' }}
                         </mat-panel-title>
                         <mat-panel-description>
                         </mat-panel-description>
