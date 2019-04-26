@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ClientCenterComponent } from './client-center/client-center.component';
-import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { ClientHomeComponent } from './client-home/client-home.component';
-import { ClientListComponent } from './client-list/client-list.component';
-import { ClientNewComponent } from './client-new/client-new.component';
-import { ClientSearchComponent } from './client-search/client-search.component';
+import { ClientCenterComponent } from './pages/client-center/client-center.component';
+import { ClientDetailComponent } from './pages/client-detail/client-detail.component';
+import { ClientHomeComponent } from './pages/client-home/client-home.component';
+import { ClientListComponent } from './pages/client-list/client-list.component';
+import { ClientNewComponent } from './pages/client-new/client-new.component';
+import { ClientSearchComponent } from './pages/client-search/client-search.component';
 
+//Guards
+import { ApiGuard } from '../core/guards/api.guard';
 const clientRoutes: Routes = [
 	{
 		path: 'client-center',
@@ -15,23 +17,23 @@ const clientRoutes: Routes = [
 		children: [
 			{
 				path: '',
-				component: ClientHomeComponent
+				component: ClientHomeComponent, canActivate:[ApiGuard], pathMatch: 'full' ,
 			},
 			{
 				path: 'clients',
-				component: ClientListComponent
+				component: ClientListComponent, canActivate:[ApiGuard], pathMatch: 'full' ,
 			},
 			{
 				path: 'new',
-				component: ClientNewComponent
+				component: ClientNewComponent, canActivate:[ApiGuard], pathMatch: 'full' ,
 			},
 			{
 				path: 'search',
-				component: ClientSearchComponent
+				component: ClientSearchComponent, canActivate:[ApiGuard], pathMatch: 'full' ,
 			},
 			{
 				path: ':id',
-				component: ClientDetailComponent
+				component: ClientDetailComponent, canActivate:[ApiGuard], pathMatch: 'full' ,
 	}]}
 ];
 

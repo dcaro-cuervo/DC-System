@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Inject, Renderer, ViewChild } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/platform-browser';
